@@ -1,6 +1,6 @@
-﻿{
+{
 	"name": "FreeNewtAltars",
-	"version_number": "1.0.0",
+	"version_number": "1.1.0",
 	"website_url": "https://github.com/konomiyuzu/RoR2",
 	"description": "Allows you to change the price of newt altars",
 	"dependencies": [
