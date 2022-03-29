@@ -5,7 +5,8 @@
 ### well this mod is for you!
 
 
-Allows for full customization of the Bottled Chaos equipment pool via config file
+Allows for full customization of the Bottled Chaos equipment pool via config file  
+should be compatible with mods as long as you can get their name/internal name/equipment index
 
 >Only the host needs the mod? (untested)
 
@@ -53,12 +54,21 @@ The Config is also case and space insensitive
 > this is meant to prevent mistakes
 
 ## Known Issues
-#### If Trophy hunter is added to the pool and is rolled, it will replace your equipment with the consumed version of trophy hunter regardless of your equipment
+* If Trophy hunter is added to the pool and is rolled, it will replace your equipment with the consumed version of trophy hunter regardless of your equipment 
 
 I might fix this if i ever feel motivated to (persumably by having a run ruined by it)
+
+## Planned features
+* Maybe a way to view the equipment name/internal name/index of modded equipments
+
+
 ## Contact
 You can find me in the modding discord **konomiyu#3611**, feel free to message me regarding any issues or suggestions for the mod
 ## Changelog
+
+**1.0.1**
+
+* Minor Readme changes
 
 **1.0.0**
 
