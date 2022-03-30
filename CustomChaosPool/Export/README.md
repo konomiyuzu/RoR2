@@ -22,10 +22,21 @@ you can find the names, internal names and indexes of all equipments [here](http
 >this would select the Preon Accumulator(0), the Disposable Missile Launcher(Disposable Missle Launcher) and the Backup(DroneBackup)
 #### **please note that if you have modded equipment indexes would be different**
 
-The Config is also case and space insensitive
-> **for example** : "vOLc aNic eGG " or "eccentricvase" are both valid inputs	
+The Config also has options for case and space insensitivity
+> **for example** : "vOLc aNic eGG " or "eccentricvase" can both be valid inputs	
 ### Config Options
 
+#### Capitalization Insensitivity
+
+> Enables Capitilization insensitivity  
+> **for example** : "Eccentric Vase" and "eccentric vase" will both work with this enabled  
+> Some modded equipment might have the same internal name with different capitilizations so try disabling this if that's the case
+
+#### Space Insensitivity
+
+> Enables Space insensitivity  
+> **for example** : "Eccentric Vase" and "Ecc entri c Vase " will both work with this enabled  
+> Some modded equipment might have the same name with different Spacing so try disabling this if that's the case
 
 #### Remove Equipment
 
@@ -69,7 +80,7 @@ you can find those by enabling "Give Equipment Info" then looking at the log fil
 ### Step by step guide
 
 1. Enable Give Equipment Info
-2. In BepInEx Enable Developer Tools in Settings
+2. Launch the game, Then in BepInEx Enable Developer Tools in Settings
 3. In Console Search for "CustomChaosPool"
 4. Wait for "Equipment Info" to pop up
 5. Double click on "Equipment Info" and search for what ever equipment you want there
@@ -82,12 +93,18 @@ I hope this is easy enough to understand to a non mod developer ^v^
 I might fix this if i ever feel motivated to (persumably by having a run ruined by it)
 
 ## Planned features
-* ~~Maybe a way to view the equipment name/internal name/index of modded equipments~~ 🗸 implemented
+* ~~Maybe a way to view the equipment name/internal name/index of modded equipments~~ 🗸 implemented 
+* Special characters (such as ') insensitivity
 
 
 ## Contact
 You can find me in the modding discord **konomiyu#3611**, feel free to message me regarding any issues or suggestions for the mod
 ## Changelog
+
+**1.0.3**
+
+* Added options for disabling space/cap insensitivity
+* Give Equipment info now also gives the exact capitalization and spacing
 
 **1.0.2**
 

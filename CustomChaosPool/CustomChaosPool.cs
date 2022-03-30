@@ -12,9 +12,9 @@ namespace CustomChaosPool
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "konomiyu";
         public const string PluginName = "CustomChaosPool";
-        public const string PluginVersion = "1.0.2";
+        public const string PluginVersion = "1.0.3";
         public static ConfigEntry<string> Equipments, AddEquipments, SetEquipmentsString;
-        public static ConfigEntry<bool> Experimental, RemoveIncompatibleEquipments, SetEquipments, LogDebug, GiveEquipmentInfo;
+        public static ConfigEntry<bool> Experimental, RemoveIncompatibleEquipments, SetEquipments, LogDebug, GiveEquipmentInfo, CapInsensitive, SpaceInsensitive;
         private static List<EquipmentIndex> RemoveList, AddList, ExactList;
         private static Dictionary<string, EquipmentIndex> Dict;
 
@@ -33,13 +33,16 @@ namespace CustomChaosPool
         private void ConfigInit()
         {
             //config
+            CapInsensitive = Config.Bind("Selection", "Capitalization Insensitivity", true, "Enables Capitalization insensitivity\nTry disabling this if a modded equipment has the same internal name but not capitalization");
+            SpaceInsensitive = Config.Bind("Selection", "Space Insensitivity", true, "Enables Space insensitivity\nTry disabling this if a modded equipment has similiar names with different spaces");
+
             Equipments = Config.Bind("Equipment", "Remove Equipment", "Volcanic Egg", "Determines what equipment are removed from the bottled chaos pool\nrefer to the mod's webpage for a guide");
 
             Experimental = Config.Bind("Experimental", "Enable Experimental settings", false, "Enable experimental settings\n(will likely break something)");
-            AddEquipments = Config.Bind("Experimental", "Add Equipment", "", "Determines what equipment are added to the bottled chaos pool\nrefer to the mod's webpage for a guide");
+            AddEquipments = Config.Bind("Experimental", "Add Equipment", "", "Determines what equipment are added to the bottled chaos pool\nrefer to the mod's webpage for a guide\n(requires Experimental)");
             SetEquipments = Config.Bind("Experimental", "Use Exact Pool", false, "Allows you to set an exact pool");
-            SetEquipmentsString = Config.Bind("Experimental", "Pool", "0,1,5,6,8,9,10,23,24,25,26,29,32,33,37,41,44,45,48,50", "(the default value is the default pool)\n(please note that if you have mods that adds equipment these indexes would be incorrect)");
-            RemoveIncompatibleEquipments = Config.Bind("Experimental", "Auto Cleanup non default equipment", false, "Enables automatic clearing for equipment that are not in the default pool\nfor example: Tricorn, Unused Equipment, Lunar Equipment");
+            SetEquipmentsString = Config.Bind("Experimental", "Pool", "0,1,5,6,8,9,10,23,24,25,26,29,32,33,37,41,44,45,48,50", "(the default value is the default pool)\n(please note that if you have mods that adds equipment these indexes would be incorrect)\n(requires Experimental)");
+            RemoveIncompatibleEquipments = Config.Bind("Experimental", "Auto Cleanup non default equipment", false, "Enables automatic clearing for equipment that are not in the default pool\nfor example: Tricorn, Unused Equipment, Lunar Equipment\n(requires Experimental)");
 
             LogDebug = Config.Bind("Miscellaneous", "Log Debug", true, "Logs extra info for debugging");
             GiveEquipmentInfo = Config.Bind("Miscellaneous", "Give Equipment Info", false, "Logs the indexes, internal names and names of all equipments into the log\n(meant for use with modded equipment)");
@@ -47,9 +50,11 @@ namespace CustomChaosPool
 
         private static List<EquipmentIndex> ConfigParser(ConfigEntry<string> conf)
         {
-            //Lowercase and removed spaces for consistency
-            string equipments = conf.Value.ToLower();
-            equipments = Regex.Replace(equipments, @"\s*", "");
+            //Some mods might have the same internal name with different capitilization so im adding an option for lowercase and space insensitivity
+            string equipments = conf.Value;
+
+            if(CapInsensitive.Value) equipments = equipments.ToLower();
+            if (SpaceInsensitive.Value) equipments = Regex.Replace(equipments, @"\s*", "");
 
 
             string[] arr = equipments.Split(',');
@@ -83,7 +88,7 @@ namespace CustomChaosPool
             foreach (EquipmentIndex equip in RemoveList)
             {
                 newList.Remove(equip);
-                debug = $"{debug}Removed {equip}\n";
+                debug = $"{debug}Removed {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})\n";
             }
 
             printdebug();
@@ -98,7 +103,7 @@ namespace CustomChaosPool
                     newList.Add(equip);
 
 
-                    debug = $"{debug}Added {equip}\n";
+                    debug = $"{debug}Added {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})\n";
                 }
 
                 printdebug();
@@ -120,7 +125,7 @@ namespace CustomChaosPool
                         if (!equipdef.canBeRandomlyTriggered)
                         {
                             newList.Remove(equip);
-                            debug = $"{debug}Auto Cleanup'ed {equip}\n";
+                            debug = $"{debug}Auto Cleanup'ed {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})\n";
                            
                         }
 
@@ -149,24 +154,35 @@ namespace CustomChaosPool
             foreach (var Equip in EquipmentCatalog.equipmentDefs)
             {
 
-                string InternalName = Equip.name.ToLower();
-                string ExternalName = Language.GetString(Equip.nameToken).ToLower();
+                string InternalName = Equip.name;
+                string ExternalName = Language.GetString(Equip.nameToken);
 
                 Info = $"{Info}{c} : {InternalName} | {ExternalName}\n";
 
-                //Lowercase for consistency
-                InternalName = InternalName.ToLower();
-                ExternalName = ExternalName.ToLower();
+                //Lowercase Option
+                if (CapInsensitive.Value)
+                {
+                    InternalName = InternalName.ToLower();
+                    ExternalName = ExternalName.ToLower();
+                }
 
 
-                //remove spaces for consistency
-                InternalName = Regex.Replace(InternalName, @"\s*", "");
-                ExternalName = Regex.Replace(ExternalName, @"\s*", "");
+                //Remove Space option
+                if (SpaceInsensitive.Value)
+                {
+                    InternalName = Regex.Replace(InternalName, @"\s*", "");
+                    ExternalName = Regex.Replace(ExternalName, @"\s*", "");
+                }
 
+                //warn about duplicates
+                if (Dict.ContainsKey(InternalName) || Dict.ContainsKey(ExternalName)) Log.LogWarning($"Duplicate Internal/External name for Index {c}");
 
+                // check if != "" because a certain equipment has no internal name
+                // and ignore duplicates as a last line of defense just in case
+                // but duplicates shouldn't make it here (hopefully)
                 Dict.Add($"{c}", (EquipmentIndex)c);
-                if (InternalName != "") Dict.Add(InternalName, (EquipmentIndex)c);
-                if (ExternalName != "") Dict.Add(ExternalName, (EquipmentIndex)c);
+                if (InternalName != "" && !Dict.ContainsKey(InternalName)) Dict.Add(InternalName, (EquipmentIndex)c);
+                if (ExternalName != "" && !Dict.ContainsKey(ExternalName)) Dict.Add(ExternalName, (EquipmentIndex)c);
 
                 //c++ hilarious i know.
                 c++;
