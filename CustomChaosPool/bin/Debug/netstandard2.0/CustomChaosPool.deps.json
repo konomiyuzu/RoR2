@@ -9,7 +9,6 @@
     ".NETStandard,Version=v2.0/": {
       "CustomChaosPool/1.0.0": {
         "dependencies": {
-          "BepInEx.Analyzers": "1.0.4",
           "BepInEx.Core": "5.4.19",
           "NETStandard.Library": "2.0.3",
           "RiskOfRain2.GameLibs": "1.2.1-r.1",
@@ -20,7 +19,6 @@
           "CustomChaosPool.dll": {}
         }
       },
-      "BepInEx.Analyzers/1.0.4": {},
       "BepInEx.BaseLib/5.4.19": {
         "runtime": {
           "lib/netstandard2.0/BepInEx.dll": {
@@ -703,13 +701,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "BepInEx.Analyzers/1.0.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-dqnskQm9dhAA+IBu0PSS9U6FST854uLfRMIgBOh5Jb5u9EMbkrNam1j39ffrVE5yOFiMdW6R3el4BbP6PE2dAw==",
-      "path": "bepinex.analyzers/1.0.4",
-      "hashPath": "bepinex.analyzers.1.0.4.nupkg.sha512"
     },
     "BepInEx.BaseLib/5.4.19": {
       "type": "package",

@@ -1,6 +1,6 @@
 {
 	"name": "CustomChaosPool",
-	"version_number": "1.0.0",
+	"version_number": "1.0.2",
 	"website_url": "https://github.com/konomiyuzu/RoR2",
 	"description": "Allows for full customization of the Bottled Chaos equipment pool via config file",
 	"dependencies": [
