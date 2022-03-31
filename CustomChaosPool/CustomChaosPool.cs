@@ -66,7 +66,7 @@ namespace CustomChaosPool
 
             if (CapInsensitive.Value) equipments = equipments.ToLower();
             if (SpaceInsensitive.Value) equipments = Regex.Replace(equipments, @"\s*", "");
-            if (SpecialInsensitive.Value) equipments = Regex.Replace(equipments, @"(?![\s\w]).", "");
+            if (SpecialInsensitive.Value) equipments = Regex.Replace(equipments, @"(?![\s\w,]).", "");
 
             string[] arr = equipments.Split(',');
             List<EquipmentIndex> output = new List<EquipmentIndex>();
@@ -188,8 +188,8 @@ namespace CustomChaosPool
                 //Remove Special option
                 if (SpecialInsensitive.Value)
                 {
-                    InternalName = Regex.Replace(InternalName, @"(?![\s\w]).", "");
-                    ExternalName = Regex.Replace(ExternalName, @"(?![\s\w]).", "");
+                    InternalName = Regex.Replace(InternalName, @"(?![\s\w,]).", "");
+                    ExternalName = Regex.Replace(ExternalName, @"(?![\s\w,]).", "");
                 }
 
                 //warn about duplicates
