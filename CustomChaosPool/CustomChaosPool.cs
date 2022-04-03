@@ -17,7 +17,7 @@ namespace CustomChaosPool
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "konomiyu";
         public const string PluginName = "CustomChaosPool";
-        public const string PluginVersion = "1.1.0";
+        public const string PluginVersion = "1.1.1";
         public static ConfigEntry<string> Equipments, AddEquipments, SetEquipmentsString;
         public static ConfigEntry<bool> Experimental, RemoveIncompatibleEquipments, SetEquipments, LogDebug, GiveEquipmentInfo, CapInsensitive, SpaceInsensitive, SpecialInsensitive, TricornPatch;
         private static List<EquipmentIndex> RemoveList, AddList, ExactList;

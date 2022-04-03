@@ -125,6 +125,10 @@ though if this were to happen you can still select them via equipment index as t
 You can find me in the modding discord **konomiyu#3611**, feel free to message me regarding any issues or suggestions for the mod
 ## Changelog
 
+**1.1.1**
+
+* Uploaded the correct file (version 1.1.0 was accidentally 1.0.2)
+
 **1.1.0**
 
 * Added Special Character insensitivity (with an option to disable it)
