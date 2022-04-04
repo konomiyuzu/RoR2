@@ -1,0 +1,12 @@
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\bin\Debug\netstandard2.0\BepInExPlugin.deps.json
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\bin\Debug\netstandard2.0\BepInExPlugin.dll
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\bin\Debug\netstandard2.0\BepInExPlugin.pdb
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\bin\Debug\netstandard2.0\MMHOOK_RoR2.dll
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.AssemblyInfo.cs
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.csproj.CopyComplete
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.dll
+C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\NoEggBottledChaos\src\obj\Debug\netstandard2.0\BepInExPlugin.pdb

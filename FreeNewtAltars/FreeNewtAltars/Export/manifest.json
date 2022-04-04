@@ -1,0 +1,10 @@
+{
+	"name": "FreeNewtAltars",
+	"version_number": "1.1.0",
+	"website_url": "https://github.com/konomiyuzu/RoR2",
+	"description": "Allows you to change the price of newt altars",
+	"dependencies": [
+		"bbepis-BepInExPack-5.4.9",
+		"RiskofThunder-HookGenPatcher-1.2.1"
+	]
+}
