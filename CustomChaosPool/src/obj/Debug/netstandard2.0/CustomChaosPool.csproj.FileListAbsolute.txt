@@ -22,3 +22,15 @@ C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\CustomChaosPool\src\obj\Debug\netstand
 C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.csproj.CopyComplete
 C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.dll
 C:\Users\Asus\Desktop\Risk Of Rain 2 Mods\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.pdb
+D:\code\RoR2\CustomChaosPool\src\bin\Debug\netstandard2.0\CustomChaosPool.deps.json
+D:\code\RoR2\CustomChaosPool\src\bin\Debug\netstandard2.0\CustomChaosPool.dll
+D:\code\RoR2\CustomChaosPool\src\bin\Debug\netstandard2.0\CustomChaosPool.pdb
+D:\code\RoR2\CustomChaosPool\src\bin\Debug\netstandard2.0\MMHOOK_RoR2.dll
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.csproj.AssemblyReference.cache
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.AssemblyInfoInputs.cache
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.AssemblyInfo.cs
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.csproj.CoreCompileInputs.cache
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.csproj.CopyComplete
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.dll
+D:\code\RoR2\CustomChaosPool\src\obj\Debug\netstandard2.0\CustomChaosPool.pdb

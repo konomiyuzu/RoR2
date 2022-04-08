@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\Desktop\\Risk Of Rain 2 Mods\\CustomChaosPool\\src\\CustomChaosPool.csproj": {}
+    "D:\\code\\RoR2\\CustomChaosPool\\src\\CustomChaosPool.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Desktop\\Risk Of Rain 2 Mods\\CustomChaosPool\\src\\CustomChaosPool.csproj": {
+    "D:\\code\\RoR2\\CustomChaosPool\\src\\CustomChaosPool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Risk Of Rain 2 Mods\\CustomChaosPool\\src\\CustomChaosPool.csproj",
+        "projectUniqueName": "D:\\code\\RoR2\\CustomChaosPool\\src\\CustomChaosPool.csproj",
         "projectName": "CustomChaosPool",
-        "projectPath": "C:\\Users\\Asus\\Desktop\\Risk Of Rain 2 Mods\\CustomChaosPool\\src\\CustomChaosPool.csproj",
+        "projectPath": "D:\\code\\RoR2\\CustomChaosPool\\src\\CustomChaosPool.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Desktop\\Risk Of Rain 2 Mods\\CustomChaosPool\\src\\obj\\",
+        "outputPath": "D:\\code\\RoR2\\CustomChaosPool\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\Desktop\\Risk Of Rain 2 Mods\\CustomChaosPool\\NuGet.Config",
+          "D:\\code\\RoR2\\CustomChaosPool\\NuGet.Config",
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

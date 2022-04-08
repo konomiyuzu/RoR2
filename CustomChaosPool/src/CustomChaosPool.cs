@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using System;
-using System.Reflection;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 
@@ -17,7 +16,7 @@ namespace CustomChaosPool
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "konomiyu";
         public const string PluginName = "CustomChaosPool";
-        public const string PluginVersion = "1.1.2";
+        public const string PluginVersion = "1.1.3";
         public static ConfigEntry<string> Equipments, AddEquipments, SetEquipmentsString;
         public static ConfigEntry<bool> Experimental, RemoveIncompatibleEquipments, SetEquipments, LogDebug, GiveEquipmentInfo, CapInsensitive, SpaceInsensitive, SpecialInsensitive, TricornPatch;
         private static List<EquipmentIndex> RemoveList, AddList, ExactList;
@@ -27,64 +26,18 @@ namespace CustomChaosPool
         public void Awake()
         {
             Log.Init(base.Logger);
-
             ConfigInit();
             
 
             //hooks
             On.RoR2.EquipmentCatalog.Init += EquipmentCatalog_Init;
             IL.RoR2.EquipmentSlot.FireBossHunter += EquipmentSlot_FireBossHunter;
-            IL.RoR2.EquipmentSlot.OnEquipmentExecuted += EquipmentSlot_OnEquipmentExecuted;
+
+            //ill move this into it's own mod
+            //IL.RoR2.EquipmentSlot.OnEquipmentExecuted += EquipmentSlot_OnEquipmentExecuted;
         }
 
-        private void EquipmentSlot_OnEquipmentExecuted(ILContext il)
-        {
-            ILCursor c = new ILCursor(il);
-
-            //its stupidly long because 
-            // "generics are nasty"
-            // - Bubbet#2639
-            c.GotoNext(
-                x => x.MatchCallvirt(out _),
-                x => x.MatchBlt(out _),
-                x => x.MatchLdloc(out _),
-                x => x.MatchBrtrue(out _),
-                x => x.MatchLdcI4(out _),
-                x => x.MatchStloc(out _),
-                x => x.MatchBr(out _),
-                x => x.MatchLdcI4(out _),
-                x => x.MatchStloc(out _),
-                x => x.MatchLdloc(out _),
-                x => x.MatchLdloc(out _),
-                x => x.MatchCallvirt(out _),
-                x => x.MatchRem(),
-                x => x.MatchStloc(out _),
-                x => x.MatchLdloc(out _),
-                x => x.MatchLdloc(out _),
-                x => x.MatchCallvirt(out _),
-                x => x.MatchStloc(out _),
-                x => x.MatchLdloc(out _),
-                x => x.MatchLdcI4(out _),
-                x => x.MatchAdd(),
-                x => x.MatchStloc(out _)
-                );
-            c.Index += 22;
-            c.Emit(OpCodes.Ldarg_0);
-            c.Emit(OpCodes.Call, typeof(EquipmentSlot).GetMethod("get_characterBody"));
-            c.Emit(OpCodes.Ldloc, 9);
-            c.EmitDelegate<Action<CharacterBody, EquipmentIndex>>((cb, index) =>
-            {
-                int bottlecount = cb.inventory.GetItemCount(DLC1Content.Items.RandomEquipmentTrigger);
-                var master = cb.master;
-                var notifqueue = CharacterMasterNotificationQueue.GetNotificationQueueForMaster(master);
-                if (!notifqueue) return;
-                var notifinfo = new CharacterMasterNotificationQueue.NotificationInfo(EquipmentCatalog.GetEquipmentDef(index), null);
-                notifqueue.PushNotification(notifinfo, (2f/bottlecount));
-
-            });
-
-            Log.LogDebug(il.ToString());
-        }
+        
 
         private void ConfigInit()
         {
@@ -139,7 +92,7 @@ namespace CustomChaosPool
         private static void EquipmentCatalog_Init(On.RoR2.EquipmentCatalog.orig_Init orig)
         {
             orig();
-            string debug = "\n";
+            string debug = "";
             SetUpLists();
             List<EquipmentIndex> newList = EquipmentCatalog.randomTriggerEquipmentList;
 
@@ -147,7 +100,7 @@ namespace CustomChaosPool
             foreach (EquipmentIndex equip in RemoveList)
             {
                 newList.Remove(equip);
-                debug = $"{debug}Removed {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})\n";
+                debug = $"{debug}\nRemoved {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})";
             }
 
             printdebug();
@@ -162,7 +115,7 @@ namespace CustomChaosPool
                     newList.Add(equip);
 
 
-                    debug = $"{debug}Added {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})\n";
+                    debug = $"{debug}\nAdded {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})";
                 }
 
                 printdebug();
@@ -184,7 +137,7 @@ namespace CustomChaosPool
                         if (!equipdef.canBeRandomlyTriggered)
                         {
                             newList.Remove(equip);
-                            debug = $"{debug}Auto Cleanup'ed {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})\n";
+                            debug = $"{debug}\nAuto Cleanup\'ed {equip} ({Language.GetString(EquipmentCatalog.GetEquipmentDef(equip).nameToken)})";
                            
                         }
 
@@ -199,15 +152,15 @@ namespace CustomChaosPool
 
             void printdebug()
             {
-                if (debug == "\n") return;
+                if (debug == "") return;
                 Log.LogDebug(debug);
-                debug = "\n";
+                debug = "";
             }
         }
 
         private static Dictionary<string, EquipmentIndex> MakeDictionary()
         {
-            string Info = "Equipment Info\nIndex : Internal Name | Name\n";
+            string Info = "Equipment Info\nIndex : Internal Name | Name | Extra info";
             Dictionary<string, EquipmentIndex> Dict = new Dictionary<string, EquipmentIndex>();
             int c = 0;
             foreach (var Equip in EquipmentCatalog.equipmentDefs)
@@ -216,7 +169,10 @@ namespace CustomChaosPool
                 string InternalName = Equip.name;
                 string ExternalName = Language.GetString(Equip.nameToken);
 
-                Info = $"{Info}{c} : {InternalName} | {ExternalName}\n";
+                Info = $"{Info}\n{c} : \"{InternalName}\" | \"{ExternalName}\"";
+
+                //all default equipments have canBeRandomlyTriggered
+                if(Equip.canBeRandomlyTriggered) Info = $"{Info} | Is in default pool";
 
                 //Lowercase Option
                 if (CapInsensitive.Value)

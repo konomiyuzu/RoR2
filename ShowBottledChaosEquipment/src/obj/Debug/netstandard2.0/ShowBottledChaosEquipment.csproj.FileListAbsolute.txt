@@ -1,0 +1,12 @@
+D:\code\RoR2\ShowBottledChaosEquipment\src\bin\Debug\netstandard2.0\ShowBottledChaosEquipment.deps.json
+D:\code\RoR2\ShowBottledChaosEquipment\src\bin\Debug\netstandard2.0\ShowBottledChaosEquipment.dll
+D:\code\RoR2\ShowBottledChaosEquipment\src\bin\Debug\netstandard2.0\ShowBottledChaosEquipment.pdb
+D:\code\RoR2\ShowBottledChaosEquipment\src\bin\Debug\netstandard2.0\MMHOOK_RoR2.dll
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.csproj.AssemblyReference.cache
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.AssemblyInfoInputs.cache
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.AssemblyInfo.cs
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.csproj.CoreCompileInputs.cache
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.csproj.CopyComplete
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.dll
+D:\code\RoR2\ShowBottledChaosEquipment\src\obj\Debug\netstandard2.0\ShowBottledChaosEquipment.pdb

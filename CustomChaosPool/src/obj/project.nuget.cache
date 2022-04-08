@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L2S56JuQSweU83KJpsuBdfGsA8yiXF9M7ljNCjFQ9afQAcZqQX6NTITyjI3DmRLYf9jItWu/W9USLOugqpJodQ==",
+  "dgSpecHash": "sW4UQhpCQOP6s18vV1cBa3EMhfoeO+ldpo9gwNUX6VrVSliLobItqzl0foHIVJOK+JL54+iz4kOy/KTx1VaKvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Desktop\\Risk Of Rain 2 Mods\\CustomChaosPool\\src\\CustomChaosPool.csproj",
+  "projectFilePath": "D:\\code\\RoR2\\CustomChaosPool\\src\\CustomChaosPool.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\bepinex.baselib\\5.4.19\\bepinex.baselib.5.4.19.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\bepinex.core\\5.4.19\\bepinex.core.5.4.19.nupkg.sha512",

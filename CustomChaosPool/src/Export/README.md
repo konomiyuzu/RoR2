@@ -69,7 +69,7 @@ The Config also has options for case and space insensitivity
 #### Use Exact Pool & Pool
 > Lets you set an exact pool  
 > **for example** : "Radar Scanner, Royal Capacitor"  
-> this would set the equipment pool to only contain radar scanner and royal capacitator
+> this would set the equipment pool to only contain radar scanner and royal capacitator  
 > Overides Remove/Add Equipment
 
 #### Auto Cleanup non default equipment
@@ -99,16 +99,35 @@ you can find those by enabling "Give Equipment Info" then looking at the log fil
 
 ### Step by step guide
 
-1. Enable Give Equipment Info
-2. Launch the game, Then in BepInEx Enable Developer Tools in Settings
-3. In Console Search for "CustomChaosPool"
-4. Wait for "Equipment Info" to pop up
-5. Double click on "Equipment Info" and search for what ever equipment you want there
+#### Method 1 Console
+
+1. Enable Give Equipment Info  
+![Step 1](https://i.imgur.com/SM13YZ4.png)
+2. Launch the game, Then in BepInEx Enable Developer Tools in Settings, you might also want to disable Close this window when the game is loaded  
+![Step 2](https://i.imgur.com/iOv1Zcy.png)
+3. In Console Search for "CustomChaosPool"  
+![Step 3](https://i.imgur.com/rtDy7WD.png)
+4. Wait for "Equipment Info" to pop up  
+![Step 4](https://i.imgur.com/aL2UMd5.png)
+5. Double click on "Equipment Info" and search for what ever equipment you want there  
+![Step 5](https://i.imgur.com/ZUm9C7B.png)
+
+#### Method 2 Log
+1. Enable Give Equipment Info  
+![Step 1](https://i.imgur.com/SM13YZ4.png)
+2. Launch the game until the main menu, then close the game  
+![Step 2](https://i.imgur.com/x0eaXPn.png)
+3. Locate your BepInEx folder, the image below assumes your using thunderstore  
+![Step 3](https://i.imgur.com/QHuDGbG.png)
+4. Open "LogOutput.log"  
+![Step 4](https://i.imgur.com/VaNTX2v.png)
+5. Search for "Equipment Info" (try Ctrl F)  
+![Step 5](https://i.imgur.com/Ge7ErJQ.png)
 
 I hope this is easy enough to understand to a non mod developer ^v^
 
 ## Known Issues
-* ``~~If Trophy hunter is added to the pool and is rolled, it will replace your equipment with the consumed version of trophy hunter regardless of your equipment~~``
+* ``If Trophy hunter is added to the pool and is rolled, it will replace your equipment with the consumed version of trophy hunter regardless of your equipment``
 
 there is an experimental patch for which may break mods that modifiy the tricorn
 
@@ -124,6 +143,11 @@ though if this were to happen you can still select them via equipment index as t
 ## Contact
 You can find me in the modding discord **konomiyu#3611**, feel free to message me regarding any issues or suggestions for the mod
 ## Changelog
+
+**1.1.3**
+
+* Give equipment info now gaves extra info
+* Improved step by step guide to be easier to follow
 
 **1.1.2**
 
