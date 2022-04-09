@@ -16,7 +16,7 @@ namespace CustomChaosPool
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "konomiyu";
         public const string PluginName = "CustomChaosPool";
-        public const string PluginVersion = "1.1.3";
+        public const string PluginVersion = "1.1.4";
         public static ConfigEntry<string> Equipments, AddEquipments, SetEquipmentsString;
         public static ConfigEntry<bool> Experimental, RemoveIncompatibleEquipments, SetEquipments, LogDebug, GiveEquipmentInfo, CapInsensitive, SpaceInsensitive, SpecialInsensitive, TricornPatch;
         private static List<EquipmentIndex> RemoveList, AddList, ExactList;
@@ -46,7 +46,7 @@ namespace CustomChaosPool
             SpaceInsensitive = Config.Bind("Selection", "Space Insensitivity", true, "Enables Space insensitivity\nTry disabling this if a modded equipment has similiar names with different spaces");
             SpecialInsensitive = Config.Bind("Selection","Special Character Insensitivity", false, "Enables Special character insensitivity\nthis includes all foreign language characters\nTry disabling this if a modded equipment consists of foreign language characters");
 
-            Equipments = Config.Bind("Equipment", "Remove Equipment", "Volcanic Egg", "Determines what equipment are removed from the bottled chaos pool\nrefer to the mod's webpage for a guide");
+            Equipments = Config.Bind("Equipment", "Remove Equipment", "FireBallDash", "Determines what equipment are removed from the bottled chaos pool\nrefer to the mod's webpage for a guide");
 
             Experimental = Config.Bind("Experimental", "Enable Experimental settings", false, "Enable experimental settings\n(will likely break something)");
             AddEquipments = Config.Bind("Experimental", "Add Equipment", "", "Determines what equipment are added to the bottled chaos pool\nrefer to the mod's webpage for a guide\n(requires Experimental)");

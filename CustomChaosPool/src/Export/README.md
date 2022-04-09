@@ -144,9 +144,13 @@ though if this were to happen you can still select them via equipment index as t
 You can find me in the modding discord **konomiyu#3611**, feel free to message me regarding any issues or suggestions for the mod
 ## Changelog
 
+**1.1.4**
+
+* Changed the default value from "Volcanic Egg" to "FireBallDash" so that it works with languages other than english
+
 **1.1.3**
 
-* Give equipment info now gaves extra info
+* Give equipment info now gives extra info
 * Improved step by step guide to be easier to follow
 
 **1.1.2**
